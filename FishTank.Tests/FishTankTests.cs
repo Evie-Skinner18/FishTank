@@ -20,17 +20,17 @@ namespace FishTank.Tests
             _goldFish = new GoldFish(0.1f);
             _angelFish = new AngelFish(0.2f);
             _babelFish = new BabelFish(0.3f);
+            _fakeFish = new FakeFish(0.7f);
         }
 
         [Test]
-        public void CanAddFishToTheFishTank_ShouldRevealThreeFish()
+        public void CanAddFishToTheFishTank_ShouldRevealFourFish()
         {
-            // arrange
+            // arrange   // act
             _fishTank.AddFish(_goldFish);
             _fishTank.AddFish(_angelFish);
-
-
-            // act
+            _fishTank.AddFish(_babelFish);
+            _fishTank.AddFish(_fakeFish);
 
             // assert
         }

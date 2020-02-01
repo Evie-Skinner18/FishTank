@@ -19,6 +19,11 @@ namespace FishTank
             _allfishToFeed.Add(fish);
         }
 
+        public List<IFish> GetFish()
+        {
+            return _allfishToFeed;
+        }
+
         public string Feed()
         {
             string currentFishMessage;
