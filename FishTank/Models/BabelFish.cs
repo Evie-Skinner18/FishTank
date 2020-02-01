@@ -2,11 +2,11 @@
 
 namespace FishTank.Models
 {
-    public class AngelFish : IFish
+    public class BabelFish : IFish
     {
         private float _foodWeight { get; set; }
 
-        public AngelFish(float foodWeight)
+        public BabelFish(float foodWeight)
         {
             _foodWeight = foodWeight;
         }
@@ -18,7 +18,7 @@ namespace FishTank.Models
 
         public string PrintMessage()
         {
-            return $"The angel fish needs {_foodWeight}g of food";
+            return $"The babel fish needs {_foodWeight}g of food";
         }
     }
 }

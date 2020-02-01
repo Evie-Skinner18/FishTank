@@ -7,8 +7,6 @@ namespace FishTank.Models
     {
         private float _foodWeight { get; set; }
 
-        private string _name = "goldfish";
-
         public GoldFish(float foodWeight)
         {
             _foodWeight = foodWeight;
@@ -21,7 +19,7 @@ namespace FishTank.Models
 
         public string PrintMessage()
         {
-            return $"The {_name} needs {_foodWeight}g of food";
+            return $"The goldfish needs {_foodWeight}g of food";
         }
     }
 }
