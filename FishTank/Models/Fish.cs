@@ -3,7 +3,7 @@ using FishTank.Models.Common;
 
 namespace FishTank.Models
 {
-    public class GoldFish : IFish
+    public class Fish : IFish
     {
         private float _foodWeight { get; set; }
 

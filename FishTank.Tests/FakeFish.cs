@@ -1,14 +1,15 @@
 ﻿using FishTank.Models.Common;
 
-namespace FishTank.Models
+namespace FishTank.Tests
 {
-    public class AngelFish : IFish
+    public class FakeFish : IFish
     {
+
         private float _foodWeight { get; set; }
 
         public void SetFoodWeight()
         {
-            _foodWeight = 0.2f;
+            _foodWeight = 0.5f;
         }
 
         public float GetFoodWeight()
