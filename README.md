@@ -8,6 +8,7 @@ A C#.Net Core class library to help someone manage their fish tank!
 - NUnit
 - Dependency injection
 - Encapsulation
+- Polymorphic behaviour
 - Loose coupling via interface use
 
 ## In a future iteration, I would like to...
