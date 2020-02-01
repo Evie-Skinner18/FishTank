@@ -33,7 +33,37 @@ namespace FishTank.Tests
 
             Assert.That(_goldFish, Is.Not.Null);
             Assert.That(goldfishFoodWeight, Is.Not.Null);
-            Assert.That(goldfishFoodWeight.Equals(0.2f));
+            Assert.That(goldfishFoodWeight.Equals(0.1f));
+        }
+
+        [Test]
+        public void CanGetAngelFishFoodWeight_ShouldReturnNoughtPointTwo()
+        {
+            var angelFishFoodWeight = _angelFish.GetFoodWeight();
+
+            Assert.That(_angelFish, Is.Not.Null);
+            Assert.That(angelFishFoodWeight, Is.Not.Null);
+            Assert.That(angelFishFoodWeight.Equals(0.2f));
+        }
+
+        [Test]
+        public void CanGetBabelFishFoodWeight_ShouldReturnNoughtPointThree()
+        {
+            var babelFishFoodWeight = _babelFish.GetFoodWeight();
+
+            Assert.That(_babelFish, Is.Not.Null);
+            Assert.That(babelFishFoodWeight, Is.Not.Null);
+            Assert.That(babelFishFoodWeight.Equals(0.3f));
+        }
+
+        [Test]
+        public void CanGetFakeFishFoodWeight_ShouldReturnNoughtPointSeven()
+        {
+            var fakeFishFoodWeight = _fakeFish.GetFoodWeight();
+
+            Assert.That(_fakeFish, Is.Not.Null);
+            Assert.That(fakeFishFoodWeight, Is.Not.Null);
+            Assert.That(fakeFishFoodWeight.Equals(0.7f));
         }
 
         [Test]
