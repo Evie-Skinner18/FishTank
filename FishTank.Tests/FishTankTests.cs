@@ -86,7 +86,11 @@ namespace FishTank.Tests
         [Test]
         public void CanFeedAllFishInTheTank_ShouldReturnOneMessagePerFish()
         {
+            var allFishInTheTank = _fishTank.GetFish();
 
+            Assert.That(_fishTank, Is.Not.Null);
+            Assert.That(allFishInTheTank, Is.Not.Null);
+            Assert.That(allFishInTheTank.Count().Equals(4));
         }
 
         
