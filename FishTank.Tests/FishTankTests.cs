@@ -67,6 +67,15 @@ namespace FishTank.Tests
         }
 
         [Test]
+        public void CanPrintGoldFishMessage_ShouldReturnTheGoldfishNeedsNoughtPointOneGramsOfFood()
+        {
+            var goldFishMessage = _goldFish.PrintMessage();
+            Assert.That(_goldFish, Is.Not.Null);
+            Assert.That(goldFishMessage, Is.Not.Null);
+            Assert.That(goldFishMessage.Equals("The goldfish needs 0.1g of food"));
+        }
+
+        [Test]
         public void CanGetAllFishInTheFishTank_ShouldReturnFourFish()
         {
             // arrange   // act
@@ -86,11 +95,14 @@ namespace FishTank.Tests
         [Test]
         public void CanFeedAllFishInTheTank_ShouldReturnOneMessagePerFish()
         {
-            var allFishInTheTank = _fishTank.GetFish();
+            _fishTank.AddFish(_goldFish);
+            _fishTank.AddFish(_angelFish);
+            _fishTank.AddFish(_babelFish);
+            _fishTank.AddFish(_fakeFish);
 
-            Assert.That(_fishTank, Is.Not.Null);
-            Assert.That(allFishInTheTank, Is.Not.Null);
-            Assert.That(allFishInTheTank.Count().Equals(4));
+            var allFishFeedingMessages = _fishTank.Feed();
+
+            Assert.That(_fishTank, Is.Not.Null);            
         }
 
         
