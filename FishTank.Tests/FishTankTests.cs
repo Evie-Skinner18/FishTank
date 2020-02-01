@@ -1,4 +1,6 @@
+using System.Linq;
 using FishTank.Models;
+using FishTank.Models.Common;
 using NUnit.Framework;
 
 namespace FishTank.Tests
@@ -23,8 +25,19 @@ namespace FishTank.Tests
             _fakeFish = new FakeFish(0.7f);
         }
 
+
         [Test]
-        public void CanAddFishToTheFishTank_ShouldRevealFourFish()
+        public void CanGetGoldFishFoodWeight_ShouldReturnNoughtPointOne()
+        {
+            var goldfishFoodWeight = _goldFish.GetFoodWeight();
+
+            Assert.That(_goldFish, Is.Not.Null);
+            Assert.That(goldfishFoodWeight, Is.Not.Null);
+            Assert.That(goldfishFoodWeight.Equals(0.2f));
+        }
+
+        [Test]
+        public void CanGetAllFishInTheFishTank_ShouldReturnFourFish()
         {
             // arrange   // act
             _fishTank.AddFish(_goldFish);
@@ -32,7 +45,22 @@ namespace FishTank.Tests
             _fishTank.AddFish(_babelFish);
             _fishTank.AddFish(_fakeFish);
 
+            var allFishInTheTank = _fishTank.GetFish();
+
             // assert
+            Assert.That(_fishTank, Is.Not.Null);
+            Assert.That(allFishInTheTank, Is.Not.Null);
+            Assert.That(allFishInTheTank.Count().Equals(4));
         }
+
+        [Test]
+        public void CanFeedAllFishInTheTank_ShouldReturnOneMessagePerFish()
+        {
+
+        }
+
+        
+
+        
     }
 }
