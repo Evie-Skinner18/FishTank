@@ -8,6 +8,7 @@ namespace FishTank
     {
         private List<IFish> _allfishToFeed { get; set; }
         private float _currentFishesFoodWeight { get; set; }
+        private string _message { get; set; }
 
         public FishTank()
         {
