@@ -67,12 +67,39 @@ namespace FishTank.Tests
         }
 
         [Test]
-        public void CanPrintGoldFishMessage_ShouldReturnTheGoldfishNeedsNoughtPointOneGramsOfFood()
+        public void CanPrintGoldFishMessage_ShouldReturnTheGoldfishNeedsNoughtPointOneGOfFood()
         {
             var goldFishMessage = _goldFish.PrintMessage();
             Assert.That(_goldFish, Is.Not.Null);
             Assert.That(goldFishMessage, Is.Not.Null);
             Assert.That(goldFishMessage.Equals("The goldfish needs 0.1g of food"));
+        }
+
+        [Test]
+        public void CanPrintAngelFishMessage_ShouldReturnTheAngelFishNeedsNoughtPointTwoGOfFood()
+        {
+            var angelFishMessage = _angelFish.PrintMessage();
+            Assert.That(_angelFish, Is.Not.Null);
+            Assert.That(angelFishMessage, Is.Not.Null);
+            Assert.That(angelFishMessage.Equals("The angel fish needs 0.2g of food"));
+        }
+
+        [Test]
+        public void CanPrintBabelFishMessage_ShouldReturnTheBabelFishNeedsNoughtPointThreeGOfFood()
+        {
+            var babelFishMessage = _babelFish.PrintMessage();
+            Assert.That(_babelFish, Is.Not.Null);
+            Assert.That(babelFishMessage, Is.Not.Null);
+            Assert.That(babelFishMessage.Equals("The babel fish needs 0.3g of food"));
+        }
+
+        [Test]
+        public void CanPrintFakeFishMessage_ShouldReturnPleaseFeedTheFakeFishNoughtPointSevenGOfFood()
+        {
+            var fakeFishMessage = _fakeFish.PrintMessage();
+            Assert.That(_fakeFish, Is.Not.Null);
+            Assert.That(fakeFishMessage, Is.Not.Null);
+            Assert.That(fakeFishMessage.Equals("Please feed the fake fish 0.7g of food."));
         }
 
         [Test]
@@ -89,7 +116,7 @@ namespace FishTank.Tests
             // assert
             Assert.That(_fishTank, Is.Not.Null);
             Assert.That(allFishInTheTank, Is.Not.Null);
-            Assert.That(allFishInTheTank.Count().Equals(4));
+            Assert.AreEqual(allFishInTheTank.Count(), 4);
         }
 
         [Test]
@@ -102,11 +129,11 @@ namespace FishTank.Tests
 
             var allFishFeedingMessages = _fishTank.Feed();
 
-            Assert.That(_fishTank, Is.Not.Null);            
-        }
-
-        
-
-        
+            Assert.That(_fishTank, Is.Not.Null);
+            Assert.That(allFishFeedingMessages, Is.Not.Null);
+            Assert.AreEqual(allFishFeedingMessages,
+                "\nThe goldfish needs 0.1g of food\nThe angel fish needs 0.2g of food" +
+                "\nThe babel fish needs 0.3g of food\nPlease feed the fake fish 0.7g of food.");
+        }   
     }
 }
