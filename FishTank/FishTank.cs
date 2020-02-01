@@ -7,7 +7,6 @@ namespace FishTank
     public class FishTank
     {
         private List<IFish> _allfishToFeed { get; set; }
-        private float _currentFishesFoodWeight { get; set; }
         private string _message { get; set; }
 
         public FishTank()
@@ -22,12 +21,15 @@ namespace FishTank
 
         public string Feed()
         {
+            string currentFishMessage;
 
             foreach (var fish in _allfishToFeed)
             {
-                _currentFishesFoodWeight = fish.GetFoodWeight();
+                currentFishMessage = fish.PrintMessage();
+                _message += $"\n{currentFishMessage}";
             }
-            return $"This fish needs {currentFishesFoodWeight}g of food.";
+
+            return _message;
         }
 
     }

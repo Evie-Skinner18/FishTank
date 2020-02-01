@@ -7,14 +7,19 @@ namespace FishTank.Tests
 
         private float _foodWeight { get; set; }
 
-        public void SetFoodWeight()
+        public FakeFish(float foodWeight)
         {
-            _foodWeight = 0.5f;
+            _foodWeight = foodWeight;
         }
 
         public float GetFoodWeight()
         {
             return _foodWeight;
+        }
+
+        public string PrintMessage()
+        {
+            return $"Please feed the fake fish {_foodWeight}g of food.";
         }
     }
 }
