@@ -18,7 +18,7 @@ namespace FishTank.Models
 
         public string PrintMessage()
         {
-            return $"The angel fish needs {_foodWeight}g of food";
+            return $"The angel fish needs g of food";
         }
     }
 }
